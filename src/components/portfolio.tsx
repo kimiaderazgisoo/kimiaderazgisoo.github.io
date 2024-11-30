@@ -1,10 +1,8 @@
 import { ReactNode, useState } from "react";
 
-import { cn } from "@/lib/utils";
+import { GalleryDialog } from "./portfolio-gallery";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
-
-type Item = {
+type PortfolioItem = {
 	title: string;
 	excerpt: string;
 	description: ReactNode;
@@ -12,78 +10,11 @@ type Item = {
 	images: { title: string; url: string }[];
 };
 
-const items: Item[] = [
-	{
-		title: "Interactive Game Analytics Dashboard",
-		excerpt:
-			"Using Gradio, Google Sheets, and Python, I developed a dynamic dashboard tailored for mobile game analytics.",
-		description: (
-			<>
-				<p className="mb-2">
-					Using Gradio, Google Sheets, and Python, I developed a dynamic
-					dashboard tailored for mobile game analytics. This tool supports game
-					design, data analysis, and decision-making with two main features:
-				</p>
-
-				<ol className="mb-2 list-decimal ps-8">
-					<li>
-						Historical Performance Analysis
-						<ul className="mb-2 list-disc ps-8">
-							<li>Track trends in DAU, Revenue, and Installs.</li>
-							<li>
-								Highlight build release dates to measure their impact on KPIs.
-							</li>
-						</ul>
-					</li>
-
-					<li>
-						LiveOps Impact Visualization
-						<ul className="mb-2 list-disc ps-8">
-							<li>
-								Analyze how LiveOps events affect player engagement and revenue.
-							</li>
-							<li>
-								Overlay event timelines with KPI trends for actionable insights.
-							</li>
-						</ul>
-					</li>
-				</ol>
-
-				<p>Key Features:</p>
-				<ul className="mb-2 list-disc ps-8">
-					<li>Seamless integration with live Google Sheets data.</li>
-					<li>Customizable date ranges and KPI selection.</li>
-					<li>Visual overlays for game builds and event durations.</li>
-					<li>Modern, user-friendly Gradio interface.</li>
-				</ul>
-
-				<p>
-					P.S. Date and values are not shown in these charts to ensure security,
-					similar to how data is presented in Brawl Stars on the internet.
-					Please note that the data is sample data.
-				</p>
-			</>
-		),
-		defaultImage: 2,
-		images: [
-			{
-				title: "Gradio Empty Form",
-				url: "/gradio-dashboard/empty.png",
-			},
-			{
-				title: "Gradio Builds Example",
-				url: "/gradio-dashboard/builds.png",
-			},
-			{
-				title: "Gradio LiveOps Example",
-				url: "/gradio-dashboard/liveops.png",
-			},
-		],
-	},
+const items: PortfolioItem[] = [
 	{
 		title: "Power BI Dashboard for Medrick Games",
 		excerpt:
-			"Developed an interactive Power BI dashboard using Power BI Report Server, designed to centralize insights across departments like HR, Finance, and Marketing. This dashboard integrates advanced interactivity, role-based security, and dynamic visuals to enhance decision-making and streamline data access.",
+			"Developed an interactive Power BI dashboard hosted on Power BI Report Server to centralize insights across departments like HR, Finance, and Marketing. The dashboard features advanced interactivity, role-based security, and dynamic visuals for better decision-making and streamlined data access.",
 		description: (
 			<>
 				<p className="mb-2">
@@ -94,129 +25,71 @@ const items: Item[] = [
 					decision-making and streamline data access.
 				</p>
 
-				<p>Key Features:</p>
+				<p>
+					<span className="font-bold text-white">Key Highlights:</span>
+				</p>
 				<ol className="mb-2 list-decimal ps-8">
 					<li>
-						Hosted on Power BI Report Server:
+						<span className="font-bold text-white">Hosting:</span> Secure,
+						on-premises deployment with public views for general insights and
+						private data secured by authentication layers.
+					</li>
+
+					<li>
+						<span className="font-bold text-white">Interactivity:</span>
 						<ul className="mb-2 list-disc ps-8">
-							<li>Secure, on-premises deployment for controlled access.</li>
 							<li>
-								Public-facing views for general insights, with private data
-								secured behind authentication layers.
+								<span className="font-bold text-white">
+									Buttons & Bookmarks:
+								</span>{" "}
+								Enable seamless navigation between KPIs, campaign performance,
+								and financial summaries.
+							</li>
+							<li>
+								<span className="font-bold text-white">Dynamic Filters:</span>{" "}
+								Allow users to drill down based on roles, departments, dates, or
+								projects.
 							</li>
 						</ul>
 					</li>
 
 					<li>
-						Advanced Interactivity:
+						<span className="font-bold text-white">
+							Role-Based Access Control (RBAC):
+						</span>
 						<ul className="mb-2 list-disc ps-8">
 							<li>
-								Buttons and Bookmarks:
-								<ul className="mb-2 list-disc ps-8">
-									<li>
-										Bookmark Buttons enable users to switch seamlessly between
-										different charts or dashboard sections on the same page.
-									</li>
-									<li>
-										For example, a single page might contain KPI metrics,
-										campaign performance, and financial summaries, with users
-										switching views using interactive buttons.
-									</li>
-								</ul>
+								Ensures users see only relevant data through Row-Level Security
+								(RLS).
 							</li>
 							<li>
-								Dynamic Filters:
-								<ul className="mb-2 list-disc ps-8">
-									<li>
-										Filters allow users to drill down into data based on
-										department, date range, project, or other criteria.
-									</li>
-									<li>
-										Custom filters ensure that specific roles (e.g., Product
-										Owners, HR Managers) see only relevant data.
-									</li>
-								</ul>
+								Combines aggregated public dashboards with secure, role-specific
+								views.
 							</li>
 						</ul>
 					</li>
 
 					<li>
-						Role-Based Access Control (RBAC):
-						<ul className="mb-2 list-disc ps-8">
-							<li>
-								Dynamic Role Filtering:
-								<ul className="mb-2 list-disc ps-8">
-									<li>
-										If there are multiple Product Owners (POs), each sees only
-										their assigned projects through Row-Level Security (RLS).
-									</li>
-									<li>
-										For example, PO1 accesses Project A, PO2 sees Project B, and
-										so on.
-									</li>
-								</ul>
-							</li>
-
-							<li>
-								Windows Server Authentication: Logins ensure users see data
-								scoped to their roles.
-							</li>
-
-							<li>
-								Combines public dashboards for aggregated insights with secure
-								views for confidential information.
-							</li>
-						</ul>
+						<span className="font-bold text-white">Visualizations:</span>{" "}
+						Includes treemaps, bar charts, line plots, and pie charts,
+						dynamically updating based on filters and roles.
 					</li>
 
 					<li>
-						Comprehensive Visualizations:
-						<ul className="mb-2 list-disc ps-8">
-							<li>
-								Includes various visuals, such as:
-								<ul className="mb-2 list-disc ps-8">
-									<li>Treemaps for hierarchical data analysis.</li>
-									<li>Stacked bar charts for trend comparisons.</li>
-									<li>Line plots for time-series trends.</li>
-									<li>Pie charts for proportional data insights.</li>
-								</ul>
-							</li>
-
-							<li>
-								Visuals are dynamically updated based on filters and user roles.
-							</li>
-						</ul>
-					</li>
-
-					<li>
-						Custom Branding and Mobile Compatibility:
-						<ul className="mb-2 list-disc ps-8">
-							<li>
-								Incorporates Modric Games branding (logo and theme colors).
-							</li>
-							<li>
-								Designed for mobile and desktop devices, ensuring seamless
-								access.
-							</li>
-						</ul>
+						<span className="font-bold text-white">
+							Custom Branding & Mobile Compatibility:
+						</span>{" "}
+						Features Modric Games branding and ensures usability on desktop and
+						mobile.
 					</li>
 				</ol>
 
-				<p>Public and Secure Dashboard Access:</p>
-				<ul className="mb-2 list-disc ps-8">
-					<li>
-						Public Views: Show general metrics (e.g., company-wide KPIs) without
-						sensitive data.
-					</li>
-					<li>
-						Private Views: Require secure login to access detailed,
-						role-specific data.
-					</li>
-					<li>
-						Dynamic Filters and Buttons: Provide tailored insights, ensuring
-						intuitive and efficient navigation.
-					</li>
-				</ul>
+				<p>
+					Public views display general KPIs, while secure views offer detailed,
+					tailored insights with dynamic filters for intuitive navigation.
+				</p>
+
+				<br />
 
 				<p>
 					P.S. Date and values are not shown in these charts to ensure security,
@@ -247,78 +120,101 @@ const items: Item[] = [
 				title: "",
 				url: "/powerbi-dashboard/retention.png",
 			},
+			{
+				title: "",
+				url: "/powerbi-dashboard/income.png",
+			},
+			{
+				title: "",
+				url: "/powerbi-dashboard/treemap.png",
+			},
+		],
+	},
+	{
+		title: "Interactive Game Analytics Dashboard",
+		excerpt:
+			"Using Gradio, Google Sheets, and Python, I developed a dynamic dashboard tailored for mobile game analytics.",
+		description: (
+			<>
+				<p className="mb-2">
+					Using Gradio, Google Sheets, and Python, I developed a dynamic
+					dashboard tailored for mobile game analytics. This tool supports game
+					design, data analysis, and decision-making with two main features:
+				</p>
+
+				<ol className="mb-2 list-decimal ps-8">
+					<li>
+						<span className="font-bold text-white">
+							Historical Performance Analysis:
+						</span>
+						<ul className="mb-2 list-disc ps-8">
+							<li>Track trends in DAU, Revenue, and Installs.</li>
+							<li>
+								Highlight build release dates to measure their impact on KPIs.
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<span className="font-bold text-white">
+							LiveOps Impact Visualization:
+						</span>
+						<ul className="mb-2 list-disc ps-8">
+							<li>
+								Analyze how LiveOps events affect player engagement and revenue.
+							</li>
+							<li>
+								Overlay event timelines with KPI trends for actionable insights.
+							</li>
+						</ul>
+					</li>
+				</ol>
+
+				<p>
+					<span className="font-bold text-white">Key Features:</span>
+				</p>
+				<ul className="mb-2 list-disc ps-8">
+					<li>Seamless integration with live Google Sheets data.</li>
+					<li>Customizable date ranges and KPI selection.</li>
+					<li>Visual overlays for game builds and event durations.</li>
+					<li>Modern, user-friendly Gradio interface.</li>
+				</ul>
+
+				<br />
+
+				<p>
+					P.S. Date and values are not shown in these charts to ensure security,
+					similar to how data is presented in Brawl Stars on the internet.
+					Please note that the data is sample data.
+				</p>
+			</>
+		),
+		defaultImage: 2,
+		images: [
+			{
+				title: "Gradio Empty Form",
+				url: "/gradio-dashboard/empty.png",
+			},
+			{
+				title: "Gradio Builds Example",
+				url: "/gradio-dashboard/builds.png",
+			},
+			{
+				title: "Gradio LiveOps Example",
+				url: "/gradio-dashboard/liveops.png",
+			},
 		],
 	},
 ];
 
-function GalleryDialog({
-	payload,
-	open,
-	onClose,
-}: {
-	payload: {
-		item: Item;
-		index: number;
-	};
-	open: boolean;
-	onClose: () => void;
-}) {
-	const [activeIndex, setActivceIndex] = useState<number>(payload.index);
-
-	return (
-		<Dialog open={open} onOpenChange={() => onClose()}>
-			<DialogContent
-				className="max-w-screen-md border-0 bg-neutral-900"
-				onPointerDownOutside={(e) => {
-					e.preventDefault();
-				}}
-			>
-				<DialogHeader>
-					<DialogTitle>{payload.item.title} Images</DialogTitle>
-				</DialogHeader>
-				<div className="space-y-6 pt-2">
-					<div className="-mx-6 grid grid-cols-12 gap-6 px-6">
-						{payload.item.images.map((image, index) => (
-							<div
-								key={index}
-								className={cn(
-									"col-span-6 flex max-h-32 cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-black opacity-40 transition duration-300 sm:col-span-3",
-									index === activeIndex && "cursor-default opacity-100",
-								)}
-								onClick={() => {
-									setActivceIndex(index);
-								}}
-							>
-								<img
-									className="h-full max-w-none"
-									src={image.url}
-									alt={image.title}
-								/>
-							</div>
-						))}
-					</div>
-					<div className="overflow-hidden rounded-2xl">
-						<a href={payload.item.images[activeIndex].url} target="_blank">
-							<img
-								src={payload.item.images[activeIndex].url}
-								title={payload.item.images[activeIndex].title}
-							/>
-						</a>
-					</div>
-				</div>
-			</DialogContent>
-		</Dialog>
-	);
-}
-
-function PortfolioItem({ item }: { item: Item; index: number }) {
+function PortfolioItem({ item }: { item: PortfolioItem; index: number }) {
 	const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 	const [dialogPayload, setDialogPayload] = useState<number>(0);
 
 	return (
 		<>
 			<div className="flex max-w-screen-xl flex-col items-center gap-10 lg:flex-row lg:items-start even:lg:flex-row-reverse">
-				<div className="space-y-4 lg:max-w-[32rem]">
+				<div className="shrink-0 space-y-4 lg:max-w-[32rem]">
 					<div
 						className="flex aspect-video w-full items-center overflow-hidden rounded-2xl bg-black"
 						onClick={() => {
@@ -327,35 +223,36 @@ function PortfolioItem({ item }: { item: Item; index: number }) {
 						}}
 					>
 						<img
-							className="w-full"
+							className="w-full cursor-pointer"
 							src={item.images[item.defaultImage ?? 0].url}
 							alt={item.images[item.defaultImage ?? 0].title}
 						/>
 					</div>
 					<div className="grid grid-cols-12 gap-4">
-						{item.images
-							.filter((_, i) => i !== item.defaultImage)
-							.map((image, index) => (
-								<div
-									key={index}
-									className="col-span-6 flex max-h-32 items-center justify-center overflow-hidden rounded-2xl bg-black"
-									onClick={() => {
-										setDialogPayload(index);
-										setDialogOpen(true);
-									}}
-								>
-									<img
-										className="h-full max-w-none"
-										src={image.url}
-										alt={image.title}
-									/>
-								</div>
-							))}
+						{item.images.map(
+							(image, index) =>
+								index !== (item.defaultImage ?? 0) && (
+									<div
+										key={index}
+										className="col-span-6 flex max-h-32 items-center justify-center overflow-hidden rounded-2xl bg-black"
+										onClick={() => {
+											setDialogPayload(index);
+											setDialogOpen(true);
+										}}
+									>
+										<img
+											className="h-full max-w-none cursor-pointer"
+											src={image.url}
+											alt={image.title}
+										/>
+									</div>
+								),
+						)}
 					</div>
 				</div>
 				<div className="space-y-3">
-					<div className="text-3xl font-bold tracking-wide">{item.title}</div>
-					<div className="text-justify text-lg leading-7">
+					<div className="text-2xl font-bold tracking-wide">{item.title}</div>
+					<div className="text-justify text-base leading-7 text-neutral-300">
 						{item.description}
 					</div>
 				</div>
@@ -388,3 +285,4 @@ function Portfolio() {
 }
 
 export { Portfolio };
+export type { PortfolioItem };

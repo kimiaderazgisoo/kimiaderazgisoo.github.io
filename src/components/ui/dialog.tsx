@@ -19,7 +19,7 @@ const DialogOverlay = React.forwardRef<
 	<DialogPrimitive.Overlay
 		ref={ref}
 		className={cn(
-			"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-black/80",
+			"fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
 			className,
 		)}
 		{...props}
@@ -30,15 +30,35 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 const DialogContent = React.forwardRef<
 	React.ElementRef<typeof DialogPrimitive.Content>,
 	React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, onInteractOutside, ...props }, ref) => (
 	<DialogPortal>
 		<DialogOverlay>
 			<DialogPrimitive.Content
 				ref={ref}
 				className={cn(
-					"data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-[10%] data-[state=open]:slide-in-from-top-[10%] relative z-50 my-32 grid w-full max-w-lg gap-4 border border-neutral-200 bg-white p-6 shadow-lg duration-200 sm:rounded-lg dark:border-neutral-800 dark:bg-neutral-950",
+					"relative z-50 my-32 grid w-full max-w-lg gap-4 border border-neutral-200 bg-white p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-[10%] data-[state=open]:slide-in-from-top-[10%] dark:border-neutral-800 dark:bg-neutral-950 sm:rounded-lg",
 					className,
 				)}
+				onInteractOutside={(event) => {
+					const target = event.target as HTMLElement;
+					const viewport = target.ownerDocument.documentElement;
+
+					// Ignore if the target doesn't exist in the DOM anymore
+					if (!viewport.contains(target)) return;
+
+					const originalEvent = event.detail.originalEvent as PointerEvent;
+					const scrollbarWidth = 20;
+					if (
+						originalEvent.clientX > viewport.clientWidth - scrollbarWidth ||
+						originalEvent.clientX < scrollbarWidth ||
+						originalEvent.clientY > viewport.clientHeight - scrollbarWidth ||
+						originalEvent.clientY < scrollbarWidth
+					) {
+						event.preventDefault();
+					} else {
+						onInteractOutside?.(event);
+					}
+				}}
 				{...props}
 			>
 				{children}
