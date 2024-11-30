@@ -1,6 +1,7 @@
 import { ReactNode, useState } from "react";
 
 import { GalleryDialog } from "./portfolio-gallery";
+import { Separator } from "./ui/separator";
 
 type PortfolioItem = {
 	title: string;
@@ -170,15 +171,15 @@ const items: PortfolioItem[] = [
 					</li>
 				</ol>
 
-				<p>
+				<p className="mb-2">
 					<span className="font-bold text-white">Key Features:</span>
+					<ul className="mb-2 list-disc ps-8">
+						<li>Seamless integration with live Google Sheets data.</li>
+						<li>Customizable date ranges and KPI selection.</li>
+						<li>Visual overlays for game builds and event durations.</li>
+						<li>Modern, user-friendly Gradio interface.</li>
+					</ul>
 				</p>
-				<ul className="mb-2 list-disc ps-8">
-					<li>Seamless integration with live Google Sheets data.</li>
-					<li>Customizable date ranges and KPI selection.</li>
-					<li>Visual overlays for game builds and event durations.</li>
-					<li>Modern, user-friendly Gradio interface.</li>
-				</ul>
 
 				<br />
 
@@ -205,15 +206,94 @@ const items: PortfolioItem[] = [
 			},
 		],
 	},
+	{
+		title: "RFM Analysis for User Segmentation in Free-to-Play Games",
+		excerpt: "",
+		description: (
+			<>
+				<p className="mb-2">
+					RFM (Recency, Frequency, Monetary) analysis segments users based on
+					three key metrics:
+				</p>
+
+				<ol className="mb-2 list-decimal ps-8">
+					<li>
+						<span className="font-bold text-white">Recency (R):</span>
+						How recently a user interacted with the game.
+					</li>
+					<li>
+						<span className="font-bold text-white">Frequency (F):</span>
+						How often a user plays the game.
+					</li>
+					<li>
+						<span className="font-bold text-white">Monetary (M):</span>
+						How much a user spends in the game.
+					</li>
+				</ol>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">What We Did:</span> We
+					conducted an RFM analysis on the users of our free-to-play game using
+					historical shop interaction data. This allowed us to segment users
+					into different groups based on their engagement and spending patterns.
+					We then used these insights to identify high-value players, detect
+					at-risk users, and understand user behavior for more targeted
+					engagement.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">Segmentation Results:</span>{" "}
+					Users were categorized into groups such as Champions (high engagement
+					and spending), Loyal Customers, At-Risk Users, and Lost Customers.
+					This segmentation helps tailor marketing campaigns, prioritize user
+					retention strategies, and optimize revenue growth.
+				</p>
+
+				<p className="mb-2">
+					RFM analysis enables data-driven strategies for better resource
+					allocation, maximizing user engagement, and driving revenue growth.
+				</p>
+
+				<br />
+
+				<p>
+					P.S. Date and values are not shown in these charts to ensure security,
+					similar to how data is presented in Brawl Stars on the internet.
+					Please note that the data is sample data.
+				</p>
+			</>
+		),
+		defaultImage: 1,
+		images: [
+			{
+				title: "",
+				url: "/rfm-analysis/1.png",
+			},
+			{
+				title: "",
+				url: "/rfm-analysis/2.png",
+			},
+			{
+				title: "",
+				url: "/rfm-analysis/3.png",
+			},
+		],
+	},
 ];
 
-function PortfolioItem({ item }: { item: PortfolioItem; index: number }) {
+function PortfolioItem({
+	item,
+	index,
+}: {
+	item: PortfolioItem;
+	index: number;
+}) {
 	const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 	const [dialogPayload, setDialogPayload] = useState<number>(0);
 
 	return (
 		<>
-			<div className="flex max-w-screen-xl flex-col items-center gap-10 lg:flex-row lg:items-start even:lg:flex-row-reverse">
+			<div className="mx-auto flex max-w-screen-xl flex-col items-center gap-10 lg:flex-row lg:items-start even:lg:flex-row-reverse">
 				<div className="shrink-0 space-y-4 lg:max-w-[32rem]">
 					<div
 						className="flex aspect-video w-full items-center overflow-hidden rounded-2xl bg-black"
@@ -258,6 +338,10 @@ function PortfolioItem({ item }: { item: PortfolioItem; index: number }) {
 				</div>
 			</div>
 
+			{index !== items.length - 1 && (
+				<Separator className="my-20 h-1.5 rounded-2xl bg-neutral-700" />
+			)}
+
 			<GalleryDialog
 				key={dialogPayload}
 				payload={{ item, index: dialogPayload }}
@@ -270,12 +354,12 @@ function PortfolioItem({ item }: { item: PortfolioItem; index: number }) {
 
 function Portfolio() {
 	return (
-		<div className="min-h-svh space-y-36 px-10 pb-40">
-			<div className="text-center text-4xl font-bold tracking-[0.2em] text-neutral-600 sm:text-6xl md:text-7xl">
+		<div className="min-h-svh w-full space-y-36 bg-neutral-800 px-10 py-36 pb-40">
+			<div className="text-center text-4xl font-bold tracking-[0.2em] text-neutral-600 sm:text-6xl md:text-5xl">
 				PORTFOLIO
 			</div>
 
-			<div className="space-y-36">
+			<div>
 				{items.map((item, index) => (
 					<PortfolioItem item={item} index={index} />
 				))}
