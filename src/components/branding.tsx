@@ -3,7 +3,7 @@ function Branding() {
 		<div className="flex min-h-svh flex-col items-center justify-center gap-16 sm:flex-row">
 			<div className="ms-12 flex size-44 items-center justify-center md:ms-16 md:size-56 lg:size-64">
 				<img
-					className="rounded-full shadow-[-48px_0_0_0_#444] md:shadow-[-64px_0_0_0_#444]"
+					className="rounded-full shadow-[-48px_0_0_0_#262626] md:shadow-[-64px_0_0_0_#262626]"
 					src="/photo.jpg"
 				/>
 			</div>
