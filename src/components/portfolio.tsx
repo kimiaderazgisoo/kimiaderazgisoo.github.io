@@ -293,7 +293,7 @@ function PortfolioItem({
 
 	return (
 		<>
-			<div className="mx-auto flex max-w-screen-xl flex-col items-center gap-10 lg:flex-row lg:items-start even:lg:flex-row-reverse">
+			<div className="nth-4n-1:lg:flex-row-reverse mx-auto flex max-w-screen-xl flex-col items-center gap-10 lg:flex-row lg:items-start">
 				<div className="shrink-0 space-y-4 lg:max-w-[32rem]">
 					<div
 						className="flex aspect-video w-full items-center overflow-hidden rounded-2xl bg-black"
