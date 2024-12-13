@@ -36,7 +36,7 @@ const DialogContent = React.forwardRef<
 			<DialogPrimitive.Content
 				ref={ref}
 				className={cn(
-					"relative z-50 my-32 grid w-full max-w-lg gap-4 border border-neutral-200 bg-white p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-[10%] data-[state=open]:slide-in-from-top-[10%] dark:border-neutral-800 dark:bg-neutral-950 sm:rounded-lg",
+					"relative z-50 my-32 grid w-full max-w-lg gap-4 border border-neutral-200 bg-white px-8 py-10 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-bottom-[10%] data-[state=open]:slide-in-from-top-[10%] dark:border-neutral-800 dark:bg-neutral-950 sm:rounded-lg",
 					className,
 				)}
 				onInteractOutside={(event) => {
@@ -62,7 +62,7 @@ const DialogContent = React.forwardRef<
 				{...props}
 			>
 				{children}
-				<DialogPrimitive.Close className="absolute right-6 top-6 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 data-[state=open]:text-neutral-500 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800 dark:data-[state=open]:text-neutral-400">
+				<DialogPrimitive.Close className="absolute right-10 top-9 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 data-[state=open]:text-neutral-500 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800 dark:data-[state=open]:text-neutral-400">
 					<X className="size-6" />
 					<span className="sr-only">Close</span>
 				</DialogPrimitive.Close>

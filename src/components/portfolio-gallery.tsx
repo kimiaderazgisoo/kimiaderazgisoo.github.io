@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 
 import { PortfolioItem } from "./portfolio";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
 } from "./ui/carousel";
 import { Conditional } from "./ui/conditional";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
@@ -44,20 +44,15 @@ function GalleryDialogContent({
 	const [activeIndex, setActivceIndex] = useState<number>(index);
 
 	return (
-		<DialogContent
-			className="max-w-screen-lg border-0 bg-neutral-900"
-			// onPointerDownOutside={(e) => {
-			// 	e.preventDefault();
-			// }}
-		>
+		<DialogContent className="max-w-screen-lg border-0 bg-neutral-900">
 			<DialogHeader>
 				<DialogTitle>{item.title} Images</DialogTitle>
 			</DialogHeader>
-			<div className="space-y-6 pt-2">
-				<div className="px-12">
+			<div className="space-y-6 px-2 pt-2">
+				<div>
 					<Carousel
 						className="text-black"
-						opts={{ loop: true, startIndex: index, dragFree: true }}
+						opts={{ loop: true, startIndex: index + 1, dragFree: true }}
 					>
 						<CarouselContent>
 							{item.images.map((image, index) => (
