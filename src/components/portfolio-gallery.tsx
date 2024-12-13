@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { PortfolioItem } from "./portfolio";
+import { PortfolioItem } from "./portfolio-item";
 import {
 	Carousel,
 	CarouselContent,
