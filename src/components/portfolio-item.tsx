@@ -96,10 +96,10 @@ const portfolioItems: PortfolioItem[] = [
 		),
 		defaultImage: 0,
 		images: [
-			{
-				title: "",
-				url: "/powerbi-dashboard/home.png",
-			},
+			// {
+			// 	title: "",
+			// 	url: "/powerbi-dashboard/home.png",
+			// },
 			{
 				title: "",
 				url: "/powerbi-dashboard/hr.png",
