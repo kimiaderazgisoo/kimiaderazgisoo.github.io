@@ -4,11 +4,11 @@ import { FaAngleLeft } from "react-icons/fa6";
 import { GalleryDialog } from "./portfolio-gallery";
 import { PortfolioItem } from "./portfolio-item";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
 } from "./ui/carousel";
 
 function PortfolioSingle({
@@ -63,14 +63,13 @@ function PortfolioSingle({
 						</div>
 					</div>
 
-					<Carousel
-						className="text-black"
-						opts={{ loop: true, startIndex: 1, dragFree: true }}
-					>
-						<CarouselContent>
-							{item.images
-								// .filter((_, index) => index !== (item.defaultImage ?? 0))
-								.map((image, index) => (
+					{item.images.length > 1 && (
+						<Carousel
+							className="text-black"
+							opts={{ loop: true, startIndex: 1, dragFree: true }}
+						>
+							<CarouselContent>
+								{item.images.map((image, index) => (
 									<CarouselItem key={index} className="basis-1/3">
 										<div
 											className="flex h-full max-h-36 cursor-pointer items-center overflow-hidden rounded-xl bg-black opacity-70 transition duration-300"
@@ -83,13 +82,14 @@ function PortfolioSingle({
 										</div>
 									</CarouselItem>
 								))}
-						</CarouselContent>
-						<CarouselPrevious className="size-7 shadow-xl shadow-neutral-950" />
-						<CarouselNext className="size-7 shadow-xl shadow-neutral-950" />
-					</Carousel>
+							</CarouselContent>
+							<CarouselPrevious className="size-7 shadow-xl shadow-neutral-950" />
+							<CarouselNext className="size-7 shadow-xl shadow-neutral-950" />
+						</Carousel>
+					)}
 
 					<div className="space-y-3">
-						<div className="text-justify text-base leading-7 text-neutral-300">
+						<div className="text-base leading-7 text-neutral-300">
 							{item.description}
 						</div>
 					</div>

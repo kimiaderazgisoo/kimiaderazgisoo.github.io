@@ -40,7 +40,7 @@ const skills: { title: string; image: string; className: string }[] = [
 
 function Branding() {
 	return (
-		<div className="mx-auto -mt-32 max-w-[32rem] shrink-0 grow-0 space-y-12 rounded-2xl bg-neutral-900 px-8 py-10 shadow-xl shadow-neutral-950 lg:w-80 xl:mx-8 xl:w-96">
+		<div className="mx-auto -mt-32 shrink-0 grow-0 space-y-12 rounded-2xl bg-neutral-900 px-8 py-10 shadow-xl shadow-neutral-950 sm:max-w-[32rem] lg:w-80 xl:mx-8 xl:w-96">
 			<div className="space-y-6">
 				<div className="mx-auto flex size-44 items-center justify-center md:size-56 lg:size-44">
 					<img className="rounded-full" src="/photo.jpg" />

@@ -49,32 +49,34 @@ function GalleryDialogContent({
 				<DialogTitle>{item.title} Images</DialogTitle>
 			</DialogHeader>
 			<div className="space-y-6 px-2 pt-2">
-				<div>
-					<Carousel
-						className="text-black"
-						opts={{ loop: true, startIndex: index + 1, dragFree: true }}
-					>
-						<CarouselContent>
-							{item.images.map((image, index) => (
-								<CarouselItem key={index} className="basis-1/3">
-									<div
-										className={cn(
-											"flex h-full max-h-32 cursor-pointer items-center overflow-hidden rounded-xl bg-black opacity-40 transition duration-300",
-											index === activeIndex && "opacity-100",
-										)}
-										onClick={() => {
-											setActivceIndex(index);
-										}}
-									>
-										<img className="" src={image.url} alt={image.title} />
-									</div>
-								</CarouselItem>
-							))}
-						</CarouselContent>
-						<CarouselPrevious />
-						<CarouselNext />
-					</Carousel>
-				</div>
+				{item.images.length > 1 && (
+					<div>
+						<Carousel
+							className="text-black"
+							opts={{ loop: true, startIndex: index + 1, dragFree: true }}
+						>
+							<CarouselContent>
+								{item.images.map((image, index) => (
+									<CarouselItem key={index} className="basis-1/3">
+										<div
+											className={cn(
+												"flex h-full max-h-32 cursor-pointer items-center overflow-hidden rounded-xl bg-black opacity-40 transition duration-300",
+												index === activeIndex && "opacity-100",
+											)}
+											onClick={() => {
+												setActivceIndex(index);
+											}}
+										>
+											<img className="" src={image.url} alt={image.title} />
+										</div>
+									</CarouselItem>
+								))}
+							</CarouselContent>
+							<CarouselPrevious />
+							<CarouselNext />
+						</Carousel>
+					</div>
+				)}
 				<div className="flex items-center justify-center overflow-hidden rounded-2xl bg-black">
 					<a href={item.images[activeIndex].url} target="_blank">
 						<img
