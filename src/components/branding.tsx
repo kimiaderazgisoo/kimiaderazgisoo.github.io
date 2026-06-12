@@ -41,23 +41,28 @@ const skills: { title: string; image: string; className: string }[] = [
 function Branding() {
 	return (
 		<div className="mx-auto -mt-32 shrink-0 grow-0 space-y-12 rounded-2xl bg-neutral-900 px-8 py-10 shadow-xl shadow-neutral-950 sm:max-w-[32rem] lg:w-80 xl:mx-8 xl:w-96">
-			<div className="space-y-6">
+			<div className="-mx-4 space-y-6">
 				<div className="mx-auto flex size-44 items-center justify-center md:size-56 lg:size-44">
 					<img className="rounded-full" src="/photo.jpg" />
 				</div>
 				<div className="flex flex-col items-center justify-center gap-3">
 					<h1 className="text-3xl font-bold">Kimia Derazgisoo</h1>
-					<h2 className="text-2xl font-bold text-[#f7a982]">DATA ANALYST</h2>
+					<h2 className="text-center text-xl font-bold text-[#f7a982]">
+						Business Intelligence Analyst
+						<br />
+						Data Analyst
+					</h2>
 				</div>
 			</div>
 
 			<div className="mt-12 space-y-2">
 				<div className="font-bold">About Me</div>
 				<p>
-					A data analyst with 5+ years of experience turning complex data into
-					meaningful insights through impactful dashboards and visualizations.
-					Passionate about driving decisions and exploring data science to solve
-					complex problems and uncover deeper insights.
+					Business Intelligence Analyst and Data Analyst with 5+ years of
+					experience delivering data-driven solutions across healthcare, gaming,
+					and academic research environments. Skilled in Power BI, SQL, Python,
+					ETL development, and automation, with a strong focus on transforming
+					complex datasets into actionable business insights
 				</p>
 			</div>
 
@@ -92,7 +97,7 @@ function Branding() {
 					View or download my resume:{" "}
 					<a
 						className="text-xl"
-						href="/kimia_derazgisoo-cv-131224.pdf"
+						href="/kimia_derazgisoo-cv-260612.pdf"
 						target="_blank"
 					>
 						<FaFilePdf />
