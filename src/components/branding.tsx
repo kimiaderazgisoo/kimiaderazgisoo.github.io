@@ -53,8 +53,8 @@ function Branding() {
 
 			<div className="mt-12 space-y-2">
 				<div className="font-bold">About Me</div>
-				<p className="text-justify">
-					A data analyst with 3 years of experience turning complex data into
+				<p>
+					A data analyst with 5+ years of experience turning complex data into
 					meaningful insights through impactful dashboards and visualizations.
 					Passionate about driving decisions and exploring data science to solve
 					complex problems and uncover deeper insights.
