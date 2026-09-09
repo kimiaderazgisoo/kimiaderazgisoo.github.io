@@ -1,4 +1,4 @@
-import { FaEnvelope, FaLinkedin } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 function Contact() {
 	return (
@@ -11,9 +11,21 @@ function Contact() {
 			<ul className="mb-2 space-y-4 sm:space-y-2">
 				<li className="flex flex-col gap-2 sm:flex-row sm:items-center">
 					<div className="flex items-center gap-2">
+						<FaEnvelope className="w-5 shrink-0 text-xl" />
+						Email:{" "}
+					</div>
+
+					<a href="mailto:kimia.derazgisou@gmail.com" target="_blank">
+						kimia.derazgisou@gmail.com
+					</a>
+				</li>
+
+				<li className="flex flex-col gap-2 sm:flex-row sm:items-center">
+					<div className="flex items-center gap-2">
 						<FaLinkedin className="w-5 shrink-0 text-xl" />
 						LinkedIn:{" "}
 					</div>
+
 					<a
 						href="https://www.linkedin.com/in/kimia-derazgisoo/"
 						target="_blank"
@@ -24,11 +36,12 @@ function Contact() {
 
 				<li className="flex flex-col gap-2 sm:flex-row sm:items-center">
 					<div className="flex items-center gap-2">
-						<FaEnvelope className="w-5 shrink-0 text-xl" />
-						Email:{" "}
+						<FaGithub className="w-5 shrink-0 text-xl" />
+						GitHub:{" "}
 					</div>
-					<a href="mailto:kimia.derazgisou@gmail.com" target="_blank">
-						kimia.derazgisou@gmail.com
+
+					<a href="https://github.com/kimiaderazgisoo" target="_blank">
+						https://github.com/kimiaderazgisoo
 					</a>
 				</li>
 			</ul>

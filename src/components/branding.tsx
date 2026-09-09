@@ -58,7 +58,7 @@ function Branding() {
 			<div className="mt-12 space-y-2">
 				<div className="font-bold">About Me</div>
 				<p>
-					Business Intelligence Analyst and Data Analyst with 5+ years of
+					Business Intelligence Analyst and Data Analyst with 6+ years of
 					experience delivering data-driven solutions across healthcare, gaming,
 					and academic research environments. Skilled in Power BI, SQL, Python,
 					ETL development, and automation, with a strong focus on transforming
@@ -97,7 +97,7 @@ function Branding() {
 					View or download my resume:{" "}
 					<a
 						className="text-xl"
-						href="/kimia_derazgisoo-cv-260612.pdf"
+						href="/kimia_derazgisoo-cv-260909.pdf"
 						target="_blank"
 					>
 						<FaFilePdf />
