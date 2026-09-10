@@ -8,6 +8,174 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
 	{
+		title: "E-Commerce Business Intelligence Dashboard",
+		excerpt: "",
+		description: (
+			<>
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						End-to-End Business Intelligence Project
+					</span>
+				</p>
+
+				<p className="mb-2">
+					An end-to-end E-Commerce Business Intelligence project focused on
+					transforming raw e-commerce data into interactive and actionable
+					business insights.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Project Overview</span>
+				</p>
+
+				<p className="mb-2">
+					I built the complete data workflow from data generation to business
+					intelligence reporting. The dataset was generated using{" "}
+					<span className="font-bold text-white">Python and Faker</span>,
+					validated through multiple data-quality checks, and then loaded into a
+					<span className="font-bold text-white">SQL Server</span> database. The
+					database was connected to{" "}
+					<span className="font-bold text-white">Power BI</span>, where I
+					designed the data model, created DAX measures, and developed an
+					interactive dashboard covering business, customer, and product
+					performance.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">
+						Data Generation & Validation
+					</span>
+				</p>
+
+				<p className="mb-2">
+					Generated a realistic synthetic e-commerce dataset using Python and
+					Faker, followed by multiple validation checks to improve data quality
+					and consistency.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">SQL Server Database</span>
+				</p>
+
+				<p className="mb-2">
+					Created a relational database in SQL Server and built the
+					Python-to-SQL Server workflow for loading the validated data.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Power BI Dashboard</span>
+				</p>
+
+				<p className="mb-2">
+					Designed an interactive three-page dashboard covering:
+				</p>
+
+				<ol className="mb-2 list-disc ps-8">
+					<li>
+						<span className="font-bold text-white">Overview:</span> Key business
+						KPIs, revenue trends, customer segmentation, and geographic
+						insights.
+					</li>
+
+					<li>
+						<span className="font-bold text-white">Customer Analysis:</span>{" "}
+						Customer growth, new vs. repeat customers, retention, demographics,
+						and geographic distribution.
+					</li>
+
+					<li>
+						<span className="font-bold text-white">Product Analysis:</span>{" "}
+						Product performance, top products, units sold, and category
+						analysis.
+					</li>
+				</ol>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Dashboard Design</span>
+				</p>
+
+				<p className="mb-2">
+					Created custom dashboard backgrounds and visual design elements using
+					PowerPoint and integrated them into Power BI.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Tech Stack</span>
+				</p>
+
+				<p className="mb-2">
+					Python · Faker · Pandas · NumPy · SQL Server · SQL · Power BI · DAX ·
+					Jupyter Notebook · PowerPoint
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Project Workflow</span>
+				</p>
+
+				<p className="mb-2">
+					Python → Data Validation → SQL Server → Data Modeling → Power BI →
+					Business Insights
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Future Development</span>
+				</p>
+
+				<p className="mb-2">
+					This project is being developed in multiple phases. The next phase
+					will introduce Marketing Analytics, including campaign performance,
+					acquisition channels, and marketing KPIs. A later phase will explore
+					<span className="font-bold text-white">Machine Learning</span> and
+					predictive analytics.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">GitHub</span>
+				</p>
+
+				<p className="mb-2">
+					The complete project, including the data-generation notebook,
+					configuration files, documentation, and dashboard screenshots, is
+					available on GitHub.
+				</p>
+
+				<p className="mb-2">
+					View the project on GitHub:{" "}
+					<a
+						className="underline underline-offset-4"
+						href="https://github.com/kimiaderazgisoo/ecommerce-data-analysis"
+						target="_blank"
+					>
+						https://github.com/kimiaderazgisoo/ecommerce-data-analysis
+					</a>
+				</p>
+
+				<br />
+
+				<p>
+					P.S. Dates and values are omitted from these charts to maintain data
+					security. Please note that the displayed data is for demonstration
+					purposes only and does not represent actual data.
+				</p>
+			</>
+		),
+		defaultImage: 0,
+		images: [
+			{
+				title: "",
+				url: "/ecommerce-business-intelligence-dashboard/1.png",
+			},
+			{
+				title: "",
+				url: "/ecommerce-business-intelligence-dashboard/2.png",
+			},
+			{
+				title: "",
+				url: "/ecommerce-business-intelligence-dashboard/3.png",
+			},
+		],
+	},
+	{
 		title: "HR Dashboard",
 		excerpt: "",
 		description: (
