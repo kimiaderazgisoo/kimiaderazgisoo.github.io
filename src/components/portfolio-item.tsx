@@ -8,6 +8,264 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
 	{
+		title: "Cookie Cats — A/B Testing & P-Value",
+		excerpt: "",
+		description: (
+			<>
+				<p className="mb-2">
+					<span className="font-bold text-white">Project Overview</span>
+				</p>
+
+				<p className="mb-2">
+					This project is a practical and visual introduction to{" "}
+					<span className="font-bold text-white">A/B testing and p-value</span>,
+					using the Cookie Cats mobile game dataset. The main goal was to
+					understand the logic behind hypothesis testing in a simple, practical
+					way and demonstrate how statistical results can be connected to a real
+					business question.
+				</p>
+
+				<p className="mb-2">
+					The dataset was originally obtained from{" "}
+					<span className="font-bold text-white">Kaggle</span> and contains data
+					from an A/B test in which players were randomly assigned to two
+					groups:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>
+						<span className="font-bold text-white">Gate 30:</span> The level
+						gate was placed at level 30.
+					</li>
+					<li>
+						<span className="font-bold text-white">Gate 40:</span> The level
+						gate was placed at level 40.
+					</li>
+				</ul>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Business Question</span>
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						Should the level gate be moved from level 30 to level 40?
+					</span>
+				</p>
+
+				<p className="mb-2">
+					To explore this question, I compared the two groups across three key
+					metrics:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>Day 1 Retention</li>
+					<li>Day 7 Retention</li>
+					<li>Total Game Rounds</li>
+				</ul>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Analysis</span>
+				</p>
+
+				<p className="mb-2">
+					The project focuses on understanding the following statistical
+					reasoning:
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						Observed Difference → Standard Error → Z-score → p-value → Decision
+					</span>
+				</p>
+
+				<p className="mb-2">
+					For retention, I used a{" "}
+					<span className="font-bold text-white">two-proportion Z-test</span> to
+					compare the retention rates between the two groups.
+				</p>
+
+				<p className="mb-2">
+					For total game rounds, I used a{" "}
+					<span className="font-bold text-white">permutation test</span>, since
+					the metric is highly right-skewed and contains extreme values.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Key Results</span>
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">Day 1 Retention</span>
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>
+						Gate 30: <span className="font-bold text-white">44.82%</span>
+					</li>
+					<li>
+						Gate 40: <span className="font-bold text-white">44.23%</span>
+					</li>
+					<li>
+						p-value: <span className="font-bold text-white">0.0744</span>
+					</li>
+				</ul>
+
+				<p className="mb-2">
+					Since p-value &gt; 0.05, there was not sufficient evidence to reject
+					the null hypothesis.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">Day 7 Retention</span>
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>
+						Gate 30: <span className="font-bold text-white">19.02%</span>
+					</li>
+					<li>
+						Gate 40: <span className="font-bold text-white">18.20%</span>
+					</li>
+					<li>
+						p-value: <span className="font-bold text-white">0.00155</span>
+					</li>
+				</ul>
+
+				<p className="mb-2">
+					Since p-value &lt; 0.05, there was sufficient evidence to reject the
+					null hypothesis.
+				</p>
+
+				<p className="mb-2">
+					The observed difference was approximately{" "}
+					<span className="font-bold text-white">0.82 percentage points</span>,
+					with higher retention in the Gate 30 group.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">Average Game Rounds</span>
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>
+						Gate 30: <span className="font-bold text-white">52.46</span>
+					</li>
+					<li>
+						Gate 40: <span className="font-bold text-white">51.30</span>
+					</li>
+					<li>
+						p-value: <span className="font-bold text-white">0.456</span>
+					</li>
+				</ul>
+
+				<p className="mb-2">
+					Since p-value &gt; 0.05, there was not sufficient evidence to reject
+					the null hypothesis.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Main Learning</span>
+				</p>
+
+				<p className="mb-2">
+					One of the main lessons from this project was understanding what a
+					p-value{" "}
+					<span className="font-bold text-white">
+						does and does not tell us
+					</span>
+					.
+				</p>
+
+				<p className="mb-2">
+					A p-value greater than 0.05 does{" "}
+					<span className="font-bold text-white">not</span> prove that two
+					groups are equal. It means that the observed data does not provide
+					sufficient evidence to reject the null hypothesis.
+				</p>
+
+				<p className="mb-2">
+					Similarly, statistical significance does not automatically mean that a
+					difference is large enough to be meaningful from a business
+					perspective.
+				</p>
+
+				<p className="mb-2">
+					For example, although the Day 7 retention difference was statistically
+					significant, the improvement was approximately{" "}
+					<span className="font-bold text-white">0.82 percentage points</span>.
+					In this analysis, a{" "}
+					<span className="font-bold text-white">
+						1 percentage-point threshold
+					</span>{" "}
+					was used as an illustrative business significance threshold, so the
+					observed improvement was below that threshold.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Key Takeaway</span>
+				</p>
+
+				<p className="mb-2">
+					This project was intentionally designed to be{" "}
+					<span className="font-bold text-white">simple and educational</span>.
+				</p>
+
+				<p className="mb-2">
+					Rather than using advanced statistical techniques, the focus was on
+					building an intuitive understanding of:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>A/B testing</li>
+					<li>Null and alternative hypotheses</li>
+					<li>Standard error</li>
+					<li>Z-score</li>
+					<li>p-value</li>
+					<li>Statistical significance</li>
+					<li>Practical/business significance</li>
+					<li>Interpreting statistical results in a business context</li>
+				</ul>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Tools</span>
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						Python · Pandas · NumPy · SciPy · Matplotlib · Jupyter Notebook
+					</span>
+				</p>
+
+				<p className="mb-2 mt-6">
+					View the project on GitHub:{" "}
+					<a
+						className="underline underline-offset-4"
+						href="https://github.com/kimiaderazgisoo/cookie-cats-ab-testing"
+						target="_blank"
+					>
+						https://github.com/kimiaderazgisoo/cookie-cats-ab-testing
+					</a>
+				</p>
+
+				<br />
+
+				<p>
+					P.S. Dates and values are omitted from these charts to maintain data
+					security. Please note that the displayed data is for demonstration
+					purposes only and does not represent actual data.
+				</p>
+			</>
+		),
+		defaultImage: 0,
+		images: [
+			{
+				title: "",
+				url: "/cookie-cats-ab-testing/1.jpg",
+			},
+		],
+	},
+	{
 		title: "E-Commerce Business Intelligence Dashboard",
 		excerpt: "",
 		description: (
