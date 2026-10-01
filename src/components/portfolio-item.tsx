@@ -8,6 +8,457 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
 	{
+		title: "Clash Royale Game Analytics",
+		excerpt: "",
+		description: (
+			<>
+				<p className="mb-2">
+					An end-to-end game analytics project exploring player behavior in a
+					mobile game environment, with a focus on{" "}
+					<span className="font-bold text-white">
+						engagement, retention, monetization, player segmentation, and
+						platform differences
+					</span>
+					.
+				</p>
+
+				<p className="mb-2">
+					The main objective was to move beyond descriptive charts and
+					understand how player behavior can reveal retention patterns,
+					monetization opportunities, and potential product improvements.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">Business Question</span>
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						How can player behavior help us understand retention and
+						monetization, and what product opportunities can be identified from
+						these patterns?
+					</span>
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Project Overview</span>
+				</p>
+
+				<p className="mb-2">
+					Using a public Clash Royale dataset created by{" "}
+					<span className="font-bold text-white">Melih Kurtaran</span>, I
+					analyzed player accounts, daily sessions, and in-app purchases to
+					understand how different aspects of player behavior are associated
+					with retention and monetization.
+				</p>
+
+				<p className="mb-2">
+					The project followed an end-to-end analytical workflow:
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						Data → Cleaning → Exploratory Analysis → Engagement → Retention →
+						Monetization → Segmentation → Business Insights → Interactive
+						Dashboard
+					</span>
+				</p>
+
+				<p className="mb-2">
+					The final analysis was transformed into an interactive{" "}
+					<span className="font-bold text-white">Streamlit dashboard</span>,
+					allowing the findings to be explored through a presentation-style
+					interface.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Player Engagement</span>
+				</p>
+
+				<p className="mb-2">
+					I explored player engagement through session frequency, session
+					duration, daily activity, early player engagement, and engagement
+					distributions.
+				</p>
+
+				<p className="mb-2">
+					The dataset showed a{" "}
+					<span className="font-bold text-white">
+						right-skewed engagement pattern
+					</span>
+					, with most player-days concentrated around relatively low session
+					counts and shorter play durations.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">
+						Retention & Cohort Analysis
+					</span>
+				</p>
+
+				<p className="mb-2">
+					Retention was evaluated across four key milestones:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>Day 1 Retention (D1)</li>
+					<li>Day 7 Retention (D7)</li>
+					<li>Day 14 Retention (D14)</li>
+					<li>Day 30 Retention (D30)</li>
+				</ul>
+
+				<p className="mb-2">
+					I also performed cohort analysis to understand how retention changed
+					across different player acquisition periods.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Monetization Analysis</span>
+				</p>
+
+				<p className="mb-2">
+					The monetization analysis focused on understanding:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>Payer conversion</li>
+					<li>Revenue</li>
+					<li>Average Revenue Per User (ARPU)</li>
+					<li>Average Revenue Per Paying User (ARPPU)</li>
+					<li>Revenue contribution</li>
+					<li>The relationship between retention and monetization</li>
+				</ul>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Player Segmentation</span>
+				</p>
+
+				<p className="mb-2">
+					Players were segmented based on their{" "}
+					<span className="font-bold text-white">Day-0 session activity</span>{" "}
+					to explore how early engagement was associated with subsequent player
+					behavior.
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>1 session</li>
+					<li>2 sessions</li>
+					<li>3–4 sessions</li>
+					<li>5+ sessions</li>
+				</ul>
+
+				<p className="mb-2">
+					These segments were compared across retention and monetization metrics
+					to identify differences between players with varying levels of early
+					engagement.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Platform Analysis</span>
+				</p>
+
+				<p className="mb-2">
+					Android and iOS players were compared across several dimensions:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>Engagement</li>
+					<li>Play time</li>
+					<li>D1 and D7 retention</li>
+					<li>Payer conversion</li>
+					<li>ARPU</li>
+					<li>ARPPU</li>
+				</ul>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">
+						Key Finding: Early Engagement & Retention
+					</span>
+				</p>
+
+				<p className="mb-2">
+					One of the strongest patterns identified was the association between{" "}
+					<span className="font-bold text-white">
+						Day-0 engagement and D7 retention
+					</span>
+					.
+				</p>
+
+				<p className="mb-2">
+					The following results show how D7 retention varied across early
+					engagement segments:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>
+						1 session: <span className="font-bold text-white">8.1%</span>
+					</li>
+					<li>
+						2 sessions: <span className="font-bold text-white">22.7%</span>
+					</li>
+					<li>
+						3–4 sessions: <span className="font-bold text-white">36.0%</span>
+					</li>
+					<li>
+						5+ sessions: <span className="font-bold text-white">55.3%</span>
+					</li>
+				</ul>
+
+				<p className="mb-2">
+					Players with higher Day-0 session activity showed substantially higher
+					D7 retention.
+				</p>
+
+				<p className="mb-2">
+					Higher early engagement was also associated with higher{" "}
+					<span className="font-bold text-white">
+						payer conversion and ARPU
+					</span>
+					, while ARPPU was comparatively more stable across engagement groups.
+				</p>
+
+				<p className="mb-2">
+					These findings represent{" "}
+					<span className="font-bold text-white">
+						observational associations rather than causal conclusions
+					</span>
+					. They provide hypotheses that could be validated through deeper
+					player-level analysis and controlled experiments.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Business Opportunities</span>
+				</p>
+
+				<p className="mb-2">
+					The analysis highlighted several opportunities that could be explored
+					through future product experiments.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						1. Improve Early-Game Engagement
+					</span>
+				</p>
+
+				<p className="mb-2">
+					Investigate onboarding, first-session experience, early quests,
+					rewards, and progression to identify opportunities to encourage
+					meaningful early activity.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						2. Identify Early Churn Risk
+					</span>
+				</p>
+
+				<p className="mb-2">
+					Analyze players with very low initial activity to identify potential
+					early-retention opportunities and test targeted re-engagement
+					strategies.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						3. Connect Engagement with Monetization
+					</span>
+				</p>
+
+				<p className="mb-2">
+					Explore how engagement milestones relate to purchase behavior and test
+					monetization experiences at different stages of the player journey.
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						4. Investigate Platform Differences
+					</span>
+				</p>
+
+				<p className="mb-2">
+					The observed differences between Android and iOS raise questions
+					around purchasing flows, offers, pricing, and platform-specific player
+					behavior that could be explored with additional data.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Interactive Dashboard</span>
+				</p>
+
+				<p className="mb-2">
+					To make the analysis more accessible, I built an interactive{" "}
+					<span className="font-bold text-white">Streamlit dashboard</span> with
+					six sections:
+				</p>
+
+				<ul className="mb-2 list-disc ps-8">
+					<li>
+						<span className="font-bold text-white">Overview:</span> High-level
+						player, engagement, retention, and monetization metrics.
+					</li>
+					<li>
+						<span className="font-bold text-white">Engagement:</span> Session
+						behavior and play-time analysis.
+					</li>
+					<li>
+						<span className="font-bold text-white">Retention:</span> Retention
+						milestones and cohort analysis.
+					</li>
+					<li>
+						<span className="font-bold text-white">Monetization:</span> Revenue,
+						payer conversion, ARPU, and ARPPU.
+					</li>
+					<li>
+						<span className="font-bold text-white">Player Segmentation:</span>
+						Engagement-based player segments and performance.
+					</li>
+					<li>
+						<span className="font-bold text-white">Platform Analysis:</span>
+						Android vs. iOS comparison.
+					</li>
+				</ul>
+
+				<p className="mb-2">
+					Explore the interactive dashboard:{" "}
+					<a
+						className="underline underline-offset-4"
+						href="https://clash-royale-analysis-dashboard.streamlit.app/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Explore the Interactive Dashboard →
+					</a>
+				</p>
+
+				<p className="mb-2">
+					For the best experience, the dashboard is recommended on a{" "}
+					<span className="font-bold text-white">PC or laptop</span>, as it was
+					designed primarily as a desktop analytics presentation.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Tools & Technologies</span>
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						Python · Pandas · NumPy · SQLite · Plotly · Streamlit · Data
+						Visualization · Product Analytics
+					</span>
+				</p>
+
+				<p className="mb-2">
+					This project was also my{" "}
+					<span className="font-bold text-white">
+						first experience building with Streamlit
+					</span>
+					, giving me the opportunity to combine analytical work with
+					interactive dashboard development and deployment.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Dataset</span>
+				</p>
+
+				<p className="mb-2">
+					The project uses a public Clash Royale dataset created by{" "}
+					<span className="font-bold text-white">Melih Kurtaran</span>,
+					containing player account information, daily session activity, and
+					in-app purchase data.
+				</p>
+
+				<p className="mb-2">
+					View the original dataset repository:{" "}
+					<a
+						className="underline underline-offset-4"
+						href="https://github.com/melihkurtaran/Clash_Royale"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						https://github.com/melihkurtaran/Clash_Royale
+					</a>
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">Project Takeaway</span>
+				</p>
+
+				<p className="mb-2">
+					The goal of this project was not simply to create visualizations, but
+					to practice the complete process of turning raw behavioral data into
+					actionable product insights:
+				</p>
+
+				<p className="mb-2">
+					<span className="font-bold text-white">
+						Data → Analysis → Finding → Business Insight → Action → Presentation
+					</span>
+				</p>
+
+				<p className="mb-2">
+					It combines{" "}
+					<span className="font-bold text-white">
+						game analytics, product thinking, statistical analysis, data
+						visualization, and interactive dashboard development
+					</span>{" "}
+					into one end-to-end project.
+				</p>
+
+				<p className="mb-2 mt-6">
+					<span className="font-bold text-white">GitHub Repository</span>
+				</p>
+
+				<p className="mb-2">
+					View the complete project on GitHub:{" "}
+					<a
+						className="underline underline-offset-4"
+						href="https://github.com/kimiaderazgisoo/clash-royale-analysis-dashboard"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						https://github.com/kimiaderazgisoo/clash-royale-analysis-dashboard
+					</a>
+				</p>
+
+				<br />
+
+				<p>
+					P.S. Dates and values are omitted from these charts to maintain data
+					security. Please note that the displayed data is for demonstration
+					purposes only and does not represent actual data.
+				</p>
+			</>
+		),
+		defaultImage: 0,
+		images: [
+			{
+				title: "",
+				url: "/clash-royale-analysis/1.png",
+			},
+			{
+				title: "",
+				url: "/clash-royale-analysis/2.png",
+			},
+			{
+				title: "",
+				url: "/clash-royale-analysis/3.png",
+			},
+			{
+				title: "",
+				url: "/clash-royale-analysis/4.png",
+			},
+			{
+				title: "",
+				url: "/clash-royale-analysis/5.png",
+			},
+			{
+				title: "",
+				url: "/clash-royale-analysis/6.png",
+			},
+		],
+	},
+	{
 		title: "Cookie Cats — A/B Testing & P-Value",
 		excerpt: "",
 		description: (
