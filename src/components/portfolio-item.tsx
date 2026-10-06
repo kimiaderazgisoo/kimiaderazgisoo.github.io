@@ -1893,7 +1893,7 @@ const portfolioItems: PortfolioItem[] = [
 	},
 	{
 		order: 4,
-		title: "Interactive Game Analytics Dashboard",
+		title: "Interactive Game Analytics Dashboard (LiveOps and Builds)",
 		excerpt:
 			"Using Gradio, Google Sheets, and Python, I developed a dynamic dashboard tailored for mobile game analytics.",
 		description: (
