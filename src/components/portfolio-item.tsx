@@ -1,4 +1,5 @@
 type PortfolioItem = {
+	order?: number;
 	title: string;
 	excerpt: string;
 	description: React.ReactNode;
@@ -8,6 +9,7 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
 	{
+		order: 1,
 		title: "Clash Royale Game Analytics",
 		excerpt: "",
 		description: (
@@ -459,6 +461,7 @@ const portfolioItems: PortfolioItem[] = [
 		],
 	},
 	{
+		order: 2,
 		title: "Cookie Cats — A/B Testing & P-Value",
 		excerpt: "",
 		description: (
@@ -1724,6 +1727,7 @@ const portfolioItems: PortfolioItem[] = [
 		],
 	},
 	{
+		order: 3,
 		title: "Power BI Dashboard for Medrick Games",
 		excerpt:
 			"Developed an interactive Power BI dashboard hosted on Power BI Report Server to centralize insights across departments like HR, Finance, and Marketing. The dashboard features advanced interactivity, role-based security, and dynamic visuals for better decision-making and streamlined data access.",
@@ -1888,6 +1892,7 @@ const portfolioItems: PortfolioItem[] = [
 		],
 	},
 	{
+		order: 4,
 		title: "Interactive Game Analytics Dashboard",
 		excerpt:
 			"Using Gradio, Google Sheets, and Python, I developed a dynamic dashboard tailored for mobile game analytics.",
@@ -1964,6 +1969,7 @@ const portfolioItems: PortfolioItem[] = [
 		],
 	},
 	{
+		order: 5,
 		title: "RFM Analysis for User Segmentation in Free-to-Play Games",
 		excerpt: "",
 		description: (

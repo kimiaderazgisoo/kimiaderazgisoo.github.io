@@ -56,9 +56,21 @@ function Portfolio({ onSelect }: { onSelect: (index: number) => void }) {
 
 	return (
 		<div ref={containterRef} className="space-y-8">
-			{portfolioItems.map((item, index) => (
-				<PortfolioItem item={item} onSelect={() => onSelect(index)} />
-			))}
+			{portfolioItems
+				.sort((a, b) => {
+					if (a.order && b.order) {
+						return a.order - b.order;
+					} else if (a.order) {
+						return -1;
+					} else if (b.order) {
+						return 1;
+					} else {
+						return 0;
+					}
+				})
+				.map((item, index) => (
+					<PortfolioItem item={item} onSelect={() => onSelect(index)} />
+				))}
 		</div>
 	);
 }
